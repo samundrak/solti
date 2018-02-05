@@ -1,0 +1,24 @@
+[
+  {
+    "name": "Higher-order component",
+    "code": "hoc"
+  },
+  {
+    "name": "Stateless function",
+    "code": "sf",
+    "src": ""
+  },
+  {
+    "name": "JSX spread attributes",
+    "code": "jsxsa",
+    "src": ""
+  },
+  {
+    "name": "Destructuring arguments",
+    "code": "da"
+  },
+  {
+    "name": "Container Component",
+    "code": "cc"
+  }
+]

@@ -1,0 +1,33 @@
+{
+  "name": "solti",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "bin": {
+    "solti": "./bin/solti.js"
+  },
+  "scripts": {
+    "dev": "export NODE_ENV=development && node src",
+    "asprod": "export NODE_ENV=production && node src",
+    "start": "node ./bin/solti",
+    "lint": "neutrino lint",
+    "test": "neutrino test"
+  },
+  "devDependencies": {
+    "@neutrinojs/airbnb-base": "8.1.1",
+    "@neutrinojs/jest": "8.1.1",
+    "@neutrinojs/node": "8.1.1",
+    "neutrino": "8.1.1"
+  },
+  "dependencies": {
+    "axios": "0.17.1",
+    "colors": "^1.1.2",
+    "handlebars": "4.0.11",
+    "inquirer": "5.0.1",
+    "inquirer_config_builder": "1.0.0",
+    "mkdirp": "0.5.1",
+    "ora": "1.4.0",
+    "prettier": "1.10.2",
+    "yargs": "11.0.0"
+  }
+}
