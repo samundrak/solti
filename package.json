@@ -28,6 +28,7 @@
     "mkdirp": "0.5.1",
     "ora": "1.4.0",
     "prettier": "1.10.2",
+    "require-from-string": "^2.0.1",
     "yargs": "11.0.0"
   }
 }

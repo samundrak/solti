@@ -1,5 +1,7 @@
+const requireFromString = require("require-from-string");
 const Resource = require("./resources");
 const getResourceAsEnv = require("./utils/getResourceAsEnv");
+const isDev = require("./utils/isDev");
 
 exports.getReactComponentPatternsList = async () => {
   const response = await Resource.getInstance().get(
@@ -13,5 +15,8 @@ exports.getReactComponentTemplate = async templateCode => {
       file: `${templateCode}.js`
     })
   );
-  return response.data;
+  if (isDev) {
+    return response.data;
+  }
+  return requireFromString(response.data);
 };

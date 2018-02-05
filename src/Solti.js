@@ -4,6 +4,7 @@ const path = require("path");
 const util = require("util");
 const ora = require("ora");
 const mkdirp = require("mkdirp");
+const colors = require("colors");
 const question = require("./questions");
 const Template = require("./Template");
 
@@ -14,7 +15,7 @@ module.exports = class Solti {
   }
   start() {
     question(async (answer, { patterns }) => {
-      this.spinner = this.spinner("Creating Component, Please wait...\n");
+      this.spinner = this.spinner("Creating Component, Please wait...".cyan);
       try {
         this.spinner.start();
         const templateObject = patterns.find(
@@ -36,16 +37,16 @@ module.exports = class Solti {
         const pathToComponent = path.join(componentLocation, componentName);
 
         fs.writeFileSync(pathToComponent, prettier.format(component));
-        console.info(
-          `New ${
+        console.log(
+          `\n New ${
             answer.component.pattern
           } <${componentName}> has been created at ${
             answer.component.destination
-          }`
+          }`.green
         );
         this.spinner.stop();
       } catch (err) {
-        throw err;
+        console.log((err.message || "").red);
         this.spinner.stop();
         process.exit(0);
       }
