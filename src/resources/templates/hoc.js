@@ -1,6 +1,6 @@
-const wrapComponent = require("./wrapComponent");
+module.exports = `
+{{#> simpleLayout }}
 
-module.exports = wrapComponent(`
 const {{componentName}} = ComposedComponent =>
   class extends React.Component {
     constructor() {
@@ -16,4 +16,5 @@ const {{componentName}} = ComposedComponent =>
       )
     }
   }
-`);
+{{/ simpleLayout }}
+`;
