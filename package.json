@@ -8,6 +8,7 @@
   },
   "scripts": {
     "dev": "export NODE_ENV=development && node src",
+    "web": "node ./example/build/dev.js",
     "asprod": "export NODE_ENV=production && node src",
     "start": "node ./bin/solti",
     "lint": "neutrino lint",
