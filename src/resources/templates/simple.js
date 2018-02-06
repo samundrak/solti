@@ -1,5 +1,6 @@
 module.exports = `
 {{#> simpleLayout }}
+
  class {{componentName}} extends React.Component {
     constructor() {
         super();
@@ -12,5 +13,6 @@ module.exports = `
       return (<div> Hello its me, {this.state.name}</div>);
     }
   }
-  {{/ simpleLayout }}
+
+{{/ simpleLayout }}
 `;

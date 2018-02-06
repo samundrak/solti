@@ -16,5 +16,6 @@ const {{componentName}} = ComposedComponent =>
       )
     }
   }
-{{/ simpleLayout }}
+
+  {{/ simpleLayout }}
 `;
