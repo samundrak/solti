@@ -7,9 +7,7 @@ module.exports = `
 
 {{> @partial-block }}
 
-{{#if isPropTypes}}
- {{componentName}}.propTypes = {};
-{{/if}}
+{{> propTypeDef }}
 
 export default {{componentName}};
 `;

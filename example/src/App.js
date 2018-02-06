@@ -1,5 +1,4 @@
 import React, { Children } from 'react';
-import Simple from './Simple';
 
 class App extends React.Component {
   constructor(props) {
@@ -10,10 +9,11 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Simple />
+        Hello World
       </div>
     );
   }
 }
+
 console.log();
 export default App;
