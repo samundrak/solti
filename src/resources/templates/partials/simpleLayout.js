@@ -1,4 +1,9 @@
 module.exports = `
+{{#if docs}}
+/**
+ * {{ docs }}
+ */
+{{/if}}
 {{> importReact }}
 
 {{#if isPropTypes}} 

@@ -1,4 +1,4 @@
-# Solti [WIP]
+# Solti
 
 Solit is an cli tool to generate React Component decorated with patterns that are widely used and mostly taken from site [React Patterns](https://reactpatterns.com/).
 
@@ -6,9 +6,9 @@ Solit is an cli tool to generate React Component decorated with patterns that ar
 
 * [x] Simple Component
 * [x] [Higher-order component](https://reactpatterns.com/#higher-order-component)
-* [ ] [Stateless function](https://reactpatterns.com/#stateless-function)
-* [ ] [JSX spread attributes](https://reactpatterns.com/#jsx-spread-attributes)
-* [ ] [Destructuring arguments](https://reactpatterns.com/#destructuring-arguments)
+* [x] [Stateless function](https://reactpatterns.com/#stateless-function)
+* [x] [JSX spread attributes](https://reactpatterns.com/#jsx-spread-attributes)
+* [x] [Destructuring arguments](https://reactpatterns.com/#destructuring-arguments)
 * [ ] [Conditional rendering](https://reactpatterns.com/#conditional-rendering)
 * [ ] [Children types](https://reactpatterns.com/#children-types)
 * [ ] [Array as children](https://reactpatterns.com/#array-as-children)
@@ -18,10 +18,10 @@ Solit is an cli tool to generate React Component decorated with patterns that ar
 * [ ] [Proxy component](https://reactpatterns.com/#proxy-component)
 * [ ] [Style component](https://reactpatterns.com/#style-component)
 * [ ] [Event switch](https://reactpatterns.com/#event-switch)
-* [ ] [Layout component](https://reactpatterns.com/#layout-component)
+* [x] [Layout component](https://reactpatterns.com/#layout-component)
 * [ ] [Container component](https://reactpatterns.com/#container-component)
 * [ ] [State hoisting](https://reactpatterns.com/#state-hoisting)
-* [ ] [Controlled input](https://reactpatterns.com/#controlled-input)
+* [x] [Controlled input](https://reactpatterns.com/#controlled-input)
 
 ## Install
 
@@ -42,6 +42,11 @@ which will ask some simple questions:
 
 `Q2: Enter component name` Name of your component [Default: Random name]
 
-`Q3: Add Prop Types` Should `solti` add prop types validation also. [Default: Yes]
+`Q3: Add props separated by coma or leave blank`  [Default: null]. If you want to add props to your component then enter props separated by coma
 
-`Q4: Enter destination for component relative from current location` This will be location where component will be place and should be default from where `solti` is running. [Default: Current Location]
+`Q4: Add Prop Types` Should `solti` add prop types validation also. [Default: Yes]
+
+`Q5: Enter destination for component relative from current location` This will be location where component will be place and should be default from where `solti` is running. [Default: Current Location]
+
+## Options
+   `--with-docs`: Will generate component with available documentation on top of every component.

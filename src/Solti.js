@@ -9,9 +9,10 @@ const contextTransformers = require('./contextTransformers');
 require('colors');
 
 module.exports = class Solti {
-  constructor() {
+  constructor(argv) {
     Template.registerPartials();
     this.spinner = ora;
+    this.args = argv;
   }
 
   static contextTransformers(templateObject) {
@@ -21,14 +22,35 @@ module.exports = class Solti {
     return {};
   }
 
+  createHandlebarsContext(answer, templateObject) {
+    const context = {
+      isPropTypes: answer.component.isPropTypes,
+      componentName: answer.component.name,
+      ...Solti.contextTransformers(templateObject)
+    };
+
+    if (answer.component.props !== 'null') {
+      context.props = (context.props || []).concat(
+        (answer.component.props || '').split(',').map((prop) => ({
+          key: prop,
+          value: 'any.isRequired',
+        })),
+      );
+    }
+    if (this.args.withDocs) {
+      context.docs = templateObject.description;
+    }
+    return context;
+  }
+
   start() {
     question(async (answer, { patterns }) => {
       this.spinner = this.spinner('Creating Component, Please wait...'.cyan);
       try {
         const templateObject = patterns.find(template => answer.component.pattern === template.name,
         ); // eslint-disable-line
-        if (templateObject.description) {
-          console.log(`${templateObject.name}: ${templateObject.description}`.yellow);
+        if (!this.args.withDocs) {
+          console.log('You can run "solti --with-docs" to generate component with documentation.'.green);
         }
         this.spinner.start();
 
@@ -36,11 +58,7 @@ module.exports = class Solti {
         * Fetch template and parse it with handlebars
         * */
         const template = await Template.parse(templateObject.code);
-        const component = template({
-          isPropTypes: answer.component.isPropTypes,
-          componentName: answer.component.name,
-          ...Solti.contextTransformers(templateObject)
-        });
+        const component = template(this.createHandlebarsContext(answer, templateObject));
 
         const componentName = `${answer.component.name}.js`;
         const componentLocation = path.join(process.cwd(), answer.component.destination);

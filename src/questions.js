@@ -18,11 +18,19 @@ const schema = {
       required: true,
       default: `Component${Date.now()}`,
     },
+    props: {
+      message: 'Add props separated by coma or leave blank',
+      required: true,
+      default: 'null'
+    },
     isPropTypes: {
       type: 'confirm',
       required: true,
       message: 'Add Prop Types',
       default: true,
+      when(answers) {
+        return answers.component.props !== 'null';
+      },
     },
     destination: {
       message: 'Enter destination for component relative from current location',

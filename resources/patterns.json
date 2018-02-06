@@ -1,0 +1,36 @@
+[
+  {
+    "name": "Simple Component",
+    "code": "simple"
+  },
+  {
+    "name": "Higher-order component",
+    "code": "hoc",
+    "description": "A higher-order function is a function that takes and/or returns a function. It’s not more complicated than that."
+  },
+  {
+    "name": "Stateless component",
+    "code": "stateless",
+    "description": "Stateless functions are a brilliant way to define highly reusable components. They don’t hold state; they’re just functions."
+  },
+  {
+    "name": "JSX spread attributes",
+    "code": "jsx-spread",
+    "description": "Spread Attributes is a JSX feature. It’s syntactic sugar for passing all of an object’s properties as JSX attributes."
+  },
+  {
+    "name": "Destructuring arguments",
+    "code": "destructing-arguments",
+    "description": "Destructuring assignment is an ES2015 feature. It pairs nicely with props in Stateless Functions."
+  },
+  {
+    "name": "Layout Component",
+    "code": "layout",
+    "description": "Layout components result in some form of static DOM element. It might not need to update frequently, if ever."
+  },
+  {
+    "name": "Controlled input",
+    "code": "controlled-input",
+    "description": "It’s hard to talk about controlled inputs in the abstract. Let’s start with an uncontrolled (normal) input and go from there.\nWhen you fiddle with this input in the browser, you see your changes. This is normal.\n A controlled input disallows the DOM mutations that make this possible. You set the value of the input in component-land and it doesn’t change in DOM-land."
+  }
+]

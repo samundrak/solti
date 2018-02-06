@@ -3,7 +3,7 @@ module.exports = `
  {{componentName}}.propTypes = {
   {{#if props}}
      {{# each props}}
-      {{this.key}}: PropTypes.{{this.value}}
+      {{this.key}}: PropTypes.{{this.value}},
      {{/each}}
   {{/if}}
  };
