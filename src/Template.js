@@ -1,12 +1,10 @@
-const Handlebars = require("handlebars");
-const fs = require("fs");
-const path = require("path");
-const partials = require("./resources/templates/partials");
-const { getReactComponentTemplate } = require("./services");
+const Handlebars = require('handlebars');
+const partials = require('./resources/templates/partials');
+const { getReactComponentTemplate } = require('./services');
 
 class Template {
   static registerPartials() {
-    Object.keys(partials).forEach(partialName => {
+    Object.keys(partials).forEach((partialName) => {
       Handlebars.registerPartial(partialName, partials[partialName]);
     });
   }

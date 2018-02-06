@@ -1,1 +1,1 @@
-module.exports = `import React from 'react';`;
+module.exports = 'import React from \'react\';';

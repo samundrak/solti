@@ -1,1 +1,1 @@
-module.exports = `import PropTypes from 'prop-types';`;
+module.exports = 'import PropTypes from \'prop-types\';';
