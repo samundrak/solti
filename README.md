@@ -1,6 +1,6 @@
 # Solti
 
-Solit is an cli tool to generate React Component decorated with patterns that are widely used and mostly taken from site [React Patterns](https://reactpatterns.com/).
+Solti is an cli tool to generate React Component decorated with patterns that are widely used and mostly taken from site [React Patterns](https://reactpatterns.com/).
 
 ##### Some of the patterns used in React (Checked are available):
 
