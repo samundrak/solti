@@ -2,6 +2,7 @@ const inquirer = require('inquirer');
 const InquirerConfigBuilder = require('inquirer_config_builder');
 const ora = require('ora');
 const { getReactComponentPatternsList } = require('./services');
+const isDev = require('./utils/isDev');
 
 const schema = {
   component: {
@@ -36,6 +37,9 @@ module.exports = async (onAnswer = () => null) => {
     const patterns = await getReactComponentPatternsList();
     schema.component.pattern.choices = patterns.map(item => item.name);
     schema.component.pattern.default = schema.component.pattern.choices[0]; // eslint-disable-line
+    if (isDev) {
+      schema.component.destination.default = './example/src/components';
+    }
     const questionReadyObject = InquirerConfigBuilder.questions(schema);
     spinner.stop();
     inquirer.prompt(questionReadyObject).then((answers) => {
