@@ -4,6 +4,7 @@ Solit is an cli tool to generate React Component decorated with patterns that ar
 
 ##### Some of the patterns used in React (Checked are available):
 
+* [x] Simple Component
 * [x] [Higher-order component](https://reactpatterns.com/#higher-order-component)
 * [ ] [Stateless function](https://reactpatterns.com/#stateless-function)
 * [ ] [JSX spread attributes](https://reactpatterns.com/#jsx-spread-attributes)
