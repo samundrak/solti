@@ -1,13 +1,13 @@
 const inquirer = require('inquirer');
 const InquirerConfigBuilder = require('inquirer_config_builder');
 const ora = require('ora');
-const { getReactComponentPatternsList } = require('./services');
 const isDev = require('./utils/isDev');
+const plugins = require('../plugins');
 
 const schema = {
   component: {
     pattern: {
-      message: 'Please select available react component patterns.',
+      message: 'Please select available component patterns.',
       type: 'list',
       required: true,
       choices: [],
@@ -40,25 +40,39 @@ const schema = {
   },
 };
 module.exports = async (onAnswer = () => null) => {
-  const spinner = ora('Fetching React component patterns...').start();
   try {
-    const patterns = await getReactComponentPatternsList();
-    schema.component.pattern.choices = patterns.map(item => item.name);
-    schema.component.pattern.default = schema.component.pattern.choices[0]; // eslint-disable-line
+    const answer = await inquirer.prompt(InquirerConfigBuilder.questions({
+      lib: {
+        name: {
+          message: 'Please select library/framework',
+          type: 'list',
+          required: true,
+          choices: plugins.map(item => item.label),
+        }
+      }
+    }));
+    let libInstance = null;
+    plugins.forEach((plugin) => {
+      if (plugin.label === answer.lib.name) {
+        libInstance = plugin;
+      }
+
+    });
     if (isDev) {
       schema.component.destination.default = './example/src/components';
     }
-    const questionReadyObject = InquirerConfigBuilder.questions(schema);
+    const spinner = ora('Preparing questions...').start();
+    const transformedSchema = await libInstance.getQuestions({ schema });
+    const questionReadyObject = InquirerConfigBuilder.questions(transformedSchema);
     spinner.stop();
     inquirer.prompt(questionReadyObject).then((answers) => {
       const configReadyObject = InquirerConfigBuilder.create(answers);
       onAnswer(configReadyObject, {
         schema,
-        patterns,
+        lib: libInstance,
       });
     });
   } catch (err) {
-    spinner.stop();
-    throw err;
+    console.error(err);
   }
 };

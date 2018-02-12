@@ -1,0 +1,1 @@
+exports.importVue = require('./importVue');

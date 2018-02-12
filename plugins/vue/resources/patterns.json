@@ -1,0 +1,21 @@
+[
+  {
+    "name": "Simple Component",
+    "code": "simple"
+  },
+  {
+    "name": "Higher-order component",
+    "code": "hoc",
+    "description": "A higher-order function is a function that takes and/or returns a function. It’s not more complicated than that."
+  },
+  {
+    "name": "Stateless component",
+    "code": "stateless",
+    "description": "Stateless functions are a brilliant way to define highly reusable components. They don’t hold state; they’re just functions."
+  },
+  {
+    "name": "Layout Component",
+    "code": "layout",
+    "description": "Layout components result in some form of static DOM element. It might not need to update frequently, if ever."
+  }
+]

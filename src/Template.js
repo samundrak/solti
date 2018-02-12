@@ -1,5 +1,5 @@
 const Handlebars = require("handlebars");
-const { getReactComponentTemplate } = require("./services");
+const { getComponentTemplate } = require("./services");
 
 class Template {
   static registerPartials(partials) {
@@ -8,14 +8,14 @@ class Template {
     });
   }
 
-  static async parse(templateCode) {
+  static async parse({ path, templateCode }) {
     try {
-      const rawTemplate = await getReactComponentTemplate(templateCode);
-      const template = Handlebars.compile(rawTemplate);
-      return template;
+      const rawTemplate = await getComponentTemplate({ path, templateCode });
+      return Handlebars.compile(rawTemplate);
     } catch (err) {
       throw err;
     }
   }
 }
+
 module.exports = Template;
