@@ -42,18 +42,7 @@ Solti is an cli tool to generate React & Vue Component decorated with patterns t
 
 From your project on any location you can run `solti` on your terminal
 which will ask some simple questions:
-
-`Please select available react component patterns` This will be the pattern you want to use. [Default: Higher order]
-
-`Please select available react component patterns` This will be the pattern you want to use. [Default: Higher order]
-
-`Enter component name` Name of your component [Default: Random name]
-
-`Q3: Add props separated by coma or leave blank`  [Default: null]. If you want to add props to your component then enter props separated by coma
-
-`Q4: Add Prop Types` Should `solti` add prop types validation also. [Default: Yes]
-
-`Q5: Enter destination for component relative from current location` This will be location where component will be place and should be default from where `solti` is running. [Default: Current Location]
+[<img src="ezgif.com-video-to-gif.gif">](https://www.npmjs.com/package/solti)
 
 ## Options
    `--with-docs`: Will generate component with available documentation on top of every component.
