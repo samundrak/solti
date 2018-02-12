@@ -10,6 +10,7 @@ module.exports = class Solti {
   constructor(argv) {
     this.spinner = ora;
     this.args = argv;
+    Template.registerHelpers();
   }
 
   start() {
@@ -36,7 +37,7 @@ module.exports = class Solti {
           ...lib.createTemplateContext(answer, templateObject),
           docs: this.args.withDocs && templateObject.description
         });
-        const componentName = `${answer.component.name}.js`;
+        const componentName = `${answer.component.name}.${lib.getFileExtension()}`;
         const componentLocation = path.join(
           process.cwd(),
           answer.component.destination

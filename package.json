@@ -41,6 +41,7 @@
     "handlebars": "4.0.11",
     "inquirer": "5.0.1",
     "inquirer_config_builder": "1.0.0",
+    "js-beautify": "^1.7.5",
     "mkdirp": "0.5.1",
     "ora": "1.4.0",
     "prettier": "1.10.2",

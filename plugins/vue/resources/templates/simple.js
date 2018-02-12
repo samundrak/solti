@@ -1,3 +1,5 @@
 module.exports = `
-hello world
+{{#> simpleLayout }}
+  hello world
+{{/ simpleLayout }}
 `;

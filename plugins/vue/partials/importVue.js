@@ -1,1 +1,1 @@
-module.exports = `import Vue from 'vue'`;
+module.exports = 'import Vue from \'vue\'';

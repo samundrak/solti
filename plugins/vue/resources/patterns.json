@@ -4,18 +4,8 @@
     "code": "simple"
   },
   {
-    "name": "Higher-order component",
-    "code": "hoc",
-    "description": "A higher-order function is a function that takes and/or returns a function. It’s not more complicated than that."
-  },
-  {
-    "name": "Stateless component",
-    "code": "stateless",
-    "description": "Stateless functions are a brilliant way to define highly reusable components. They don’t hold state; they’re just functions."
-  },
-  {
-    "name": "Layout Component",
-    "code": "layout",
-    "description": "Layout components result in some form of static DOM element. It might not need to update frequently, if ever."
+    "name": "Functional Component",
+    "code": "functional",
+    "description": "You can think of a functional component to be the equivalent of a function,\n brought to the component world. That said, it’s a component that takes a render context and returns the rendered HTML.\n https://alligator.io/vuejs/functional-components/"
   }
 ]

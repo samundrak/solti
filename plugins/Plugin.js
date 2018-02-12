@@ -5,6 +5,7 @@ module.exports = class Plugin {
   constructor() {
     this._patterns = [];
     this._partials = {};
+    this._fileExtension = 'js';
     this.pathToPatterns = 'REACT_COMPONENT_PATTERNS_LIST'; // default
     this.pathToTemplate = 'REACT_COMPONENT_PATTERN_TEMPLATE'; // default
   }
@@ -24,7 +25,7 @@ module.exports = class Plugin {
    * @return {Array}
    */
   getPatterns() {
-    return  this._patterns;
+    return this._patterns;
   }
 
   static contextTransformers(contextTransformers, templateObject) {
@@ -79,4 +80,7 @@ module.exports = class Plugin {
     return schema;
   }
 
+  getFileExtension() {
+    return this._fileExtension;
+  }
 };
