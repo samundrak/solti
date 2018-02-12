@@ -1,22 +1,27 @@
-const Handlebars = require('handlebars');
-const partials = require('./resources/templates/partials');
-const { getReactComponentTemplate } = require('./services');
+const Handlebars = require("handlebars");
+const { getComponentTemplate } = require("./services");
 
 class Template {
-  static registerPartials() {
-    Object.keys(partials).forEach((partialName) => {
+  static registerHelpers() {
+    Handlebars.registerHelper('raw', function (content) {
+      return content.fn();
+    });
+  }
+
+  static registerPartials(partials) {
+    Object.keys(partials).forEach(partialName => {
       Handlebars.registerPartial(partialName, partials[partialName]);
     });
   }
 
-  static async parse(templateCode) {
+  static async parse({ path, templateCode }) {
     try {
-      const rawTemplate = await getReactComponentTemplate(templateCode);
-      const template = Handlebars.compile(rawTemplate);
-      return template;
+      const rawTemplate = await getComponentTemplate({ path, templateCode });
+      return Handlebars.compile(rawTemplate);
     } catch (err) {
       throw err;
     }
   }
 }
+
 module.exports = Template;

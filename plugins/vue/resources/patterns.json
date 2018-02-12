@@ -1,0 +1,11 @@
+[
+  {
+    "name": "Simple Component",
+    "code": "simple"
+  },
+  {
+    "name": "Functional Component",
+    "code": "functional",
+    "description": "You can think of a functional component to be the equivalent of a function,\n brought to the component world. That said, it’s a component that takes a render context and returns the rendered HTML.\n https://alligator.io/vuejs/functional-components/"
+  }
+]

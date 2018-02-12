@@ -1,6 +1,6 @@
 # Solti
 
-Solti is an cli tool to generate React Component decorated with patterns that are widely used and mostly taken from site [React Patterns](https://reactpatterns.com/).
+Solti is an cli tool to generate React & Vue Component decorated with patterns that are widely used and mostly taken from site [React Patterns](https://reactpatterns.com/) and others.
 
 ##### Some of the patterns used in React (Checked are available):
 
@@ -23,6 +23,11 @@ Solti is an cli tool to generate React Component decorated with patterns that ar
 * [ ] [State hoisting](https://reactpatterns.com/#state-hoisting)
 * [x] [Controlled input](https://reactpatterns.com/#controlled-input)
 
+##### Some of the patterns used in Vue (Checked are available):
+
+* [x] Simple Component
+* [x] [Functional Component](https://alligator.io/vuejs/functional-components/)
+
 ## Install
 
 ### NPM
@@ -38,9 +43,11 @@ Solti is an cli tool to generate React Component decorated with patterns that ar
 From your project on any location you can run `solti` on your terminal
 which will ask some simple questions:
 
-`Q1: Please select available react component patterns` This will be the pattern you want to use. [Default: Higher order]
+`Please select available react component patterns` This will be the pattern you want to use. [Default: Higher order]
 
-`Q2: Enter component name` Name of your component [Default: Random name]
+`Please select available react component patterns` This will be the pattern you want to use. [Default: Higher order]
+
+`Enter component name` Name of your component [Default: Random name]
 
 `Q3: Add props separated by coma or leave blank`  [Default: null]. If you want to add props to your component then enter props separated by coma
 
