@@ -5,7 +5,7 @@ exports.REACT_COMPONENT_PATTERNS_LIST = {
 };
 exports.REACT_COMPONENT_PATTERN_TEMPLATE = {
   REMOTE:
-    'https://raw.githubusercontent.com/samundrak/solti/master/plugin/react/resources/templates',
+    'https://raw.githubusercontent.com/samundrak/solti/master/plugins/react/resources/templates',
   LOCAL: 'plugins/react/resources/templates/',
 };
 exports.VUE_COMPONENT_PATTERNS_LIST = {
@@ -15,6 +15,6 @@ exports.VUE_COMPONENT_PATTERNS_LIST = {
 };
 exports.VUE_COMPONENT_PATTERN_TEMPLATE = {
   REMOTE:
-    'https://raw.githubusercontent.com/samundrak/solti/master/plugin/vue/resources/templates',
+    'https://raw.githubusercontent.com/samundrak/solti/master/plugins/vue/resources/templates',
   LOCAL: 'plugins/vue/resources/templates/',
 };
